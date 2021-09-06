@@ -8,6 +8,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.dev9:junit-webdriver:1.6'
     testImplementation(platform('org.junit:junit-bom:5.7.2'))
     testImplementation('org.junit.jupiter:junit-jupiter:5.7.2')
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
