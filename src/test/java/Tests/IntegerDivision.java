@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.SearchPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class IntegerDivision {
 
     private static WebDriver driver;
+    private static SearchPage searchPage;
 
     @BeforeAll
     public static void init() {
@@ -20,12 +22,13 @@ public class IntegerDivision {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
+        searchPage = new SearchPage(driver);
     }
     @Test
     public void test1() {
 
         driver.get("https://www.google.com/");
-        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("Калькулятор", Keys.ENTER);
+        searchPage.search("Калькулятор");
 
     }
 
