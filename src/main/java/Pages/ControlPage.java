@@ -18,6 +18,9 @@ public class ControlPage {
     @FindBy(css = "div[jsname='XSr6wc']")
     public WebElement plus;
 
+    @FindBy(css = "div[jsname='lVjWed']")
+    public WebElement two;
+
     @FindBy(css = "div[jsname='qCp9A']")
     public WebElement closeBracket;
 
@@ -50,6 +53,9 @@ public class ControlPage {
 
     @FindBy(css = "div[jsname='aN1RFf']")
     public WebElement sinus;
+
+    @FindBy(css = "#cwos")
+    public WebElement result;
 
 
     public ControlPage(WebDriver driver) {
