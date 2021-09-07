@@ -12,8 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-public class IntegerDivision {
+public class DivisionByZero {
 
     private static WebDriver driver;
     private static SearchPage searchPage;
@@ -29,33 +28,24 @@ public class IntegerDivision {
         controlPage = new ControlPage(driver);
     }
     @Test
-    @DisplayName("Проверка операций с целыми числами")
+    @DisplayName("Проверка деления на ноль")
     public void test1() {
 
         driver.get("https://www.google.com/");
         searchPage.search("Калькулятор");
 
-        controlPage.openBracket.click();
-        controlPage.one.click();
-        controlPage.plus.click();
-        controlPage.two.click();
-        controlPage.closeBracket.click();
-        controlPage.multiply.click();
-        controlPage.three.click();
-        controlPage.minus.click();
-        controlPage.four.click();
-        controlPage.zero.click();
+        controlPage.six.click();
         controlPage.divide.click();
-        controlPage.five.click();
+        controlPage.zero.click();
         controlPage.equals.click();
 
-        assertEquals("1", controlPage.result.getText());
+        assertEquals("Infinity", controlPage.result.getText());
     }
 
-   @AfterAll
+    @AfterAll
     public static void teardown() throws InterruptedException {
-       Thread.sleep(4000L);
+        Thread.sleep(4000L);
         driver.quit();
     }
-}
 
+}
